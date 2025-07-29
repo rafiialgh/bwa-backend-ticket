@@ -1,4 +1,5 @@
 import express, { type Express, type Request, type Response } from 'express';
+var logger = require('morgan')
 import dotenv from 'dotenv';
 import connectDB from './utils/database';
 import cors from 'cors'
@@ -13,6 +14,7 @@ const app: Express = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json())
+app.use(logger('dev'))
 app.use(cors())
 app.use(express.static('public'))
 
