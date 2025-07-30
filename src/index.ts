@@ -25,7 +25,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/customer', customerRoutes)
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
+  res.send('BWA Backend Ticket');
 });
 
 app.listen(port, () => {

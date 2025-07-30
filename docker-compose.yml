@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: bwa-backend-ticket
+    ports:
+      - "4000:3000"
+    environment:
+      - DATABASE_URL=mongodb://mongodb:27017/db_bwa_ticket
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/app
+    command: npm run dev
+
+  mongodb:
+    image: mongo:latest
+    container_name: bwa-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./backup_db_bwa_ticket:/backup
+
+volumes:
+  mongodb_data:

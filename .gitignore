@@ -1,0 +1,32 @@
+# Folder backup
+/backup_db_bwa_ticket/
+
+# Atau berdasarkan ekstensi file jika ada
+*.dump
+*.sql
+*.archive
+
+# Folder dependensi Node.js
+# Sangat besar dan bisa di-generate ulang dengan 'npm install'
+/node_modules/
+
+# File Environment
+# SANGAT PENTING: Berisi data sensitif seperti password DB, API keys, dll.
+.env
+.env.*
+!.env.example
+
+# File Log
+# Spesifik untuk sesi lokal dan bisa sangat besar
+*.log
+npm-debug.log*
+
+# Folder hasil build atau kompilasi
+/dist
+/build
+
+# File Sistem Operasi & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
